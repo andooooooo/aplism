@@ -1,10 +1,8 @@
-import sys
 import re
 import time
 import requests
 from bs4 import BeautifulSoup,NavigableString
 import urllib.request
-import os
 
 p = re.compile('applism&amp;t=[0-9]+')
 p5 =re.compile('keyword')
@@ -129,7 +127,6 @@ while i < 1000:
     u = 0
     numm =gettt()
     hantei = numm in lists
-    print(hantei)
     if hantei:
         time.sleep(300)
         continue
@@ -137,7 +134,6 @@ while i < 1000:
     while y < 60:
         u =0
         urll = "http://potato.2ch.net/test/read.cgi/applism/" + numm
-        print(urll)
         datae = requests.get(urll)
         datae = datae.text
         u = datae.count('data-id')
